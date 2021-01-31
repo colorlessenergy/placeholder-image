@@ -12,13 +12,13 @@
   context.fillStyle = colorPickerInput.value;
   context.fillRect(0, 0, widthInput.value, heightInput.value);
 
-  widthInput.addEventListener('keyup', (ev) => {
+  widthInput.addEventListener('input', (ev) => {
     let widthInputValue = ev.target.value;
     let heightInputValue = heightInput.value;
     updateCanvasDimensions(widthInputValue, heightInputValue);
   });
 
-  heightInput.addEventListener('keyup', (ev) => {
+  heightInput.addEventListener('input', (ev) => {
     let heightInputValue = ev.target.value;
     let widthInputValue = widthInput.value;
     updateCanvasDimensions(widthInputValue, heightInputValue);
