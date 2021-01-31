@@ -1,5 +1,6 @@
 (function () {
   const form = document.querySelector('#form-placeholder-dimensions');
+  const downloadCanvasButton = document.querySelector('#download-canvas-button');
   const widthInput = form.width;
   const heightInput = form.height;
   const colorPickerInput = form['color-picker'];
@@ -24,9 +25,19 @@
   });
 
   colorPickerInput.addEventListener('input', (ev) => {
-    context.fillStyle = colorPickerInput.value;
+    context.fillStyle = ev.target.value;
     context.fillRect(0, 0, widthInput.value, heightInput.value);
   });
+
+  downloadCanvasButton.addEventListener('click', downloadCanvasAsImage);
+
+  function downloadCanvasAsImage (){
+    let anchorTag = document.createElement('a');
+    let downloadedFileName = `placeholder-${widthInput.value}x${heightInput.value}.png`;
+    anchorTag.download = downloadedFileName;
+    anchorTag.href = canvas.toDataURL();
+    anchorTag.click();
+  }
 
   function updateCanvasDimensions (width, height) {    
     canvas.width = width;
