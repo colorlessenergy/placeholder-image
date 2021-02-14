@@ -3,40 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
   <title>placeholder image</title>
 </head>
 <body>
-  <form id="form-placeholder-dimensions">
-    <div>
-      <label for="width">
-        width
-      </label>
-      <input
-        value="200" 
-        type="number" 
-        id="width" 
-        name="width" />
-    </div>
-    <div>
-      <label for="height">
-        height
-      </label>
-      <input
-        value="200" 
-        type="number" 
-        id="height" 
-        name="height" />
-    </div>
-    <div>
-      <label for="color-picker">
-        color picker
-      </label>
-      <input type="color"id="color-picker" name="color-picker" value="#000000" />
-    </div>
-  </form>
-  <canvas id="canvas"></canvas>
+  
 
-  <button id="download-canvas-button">download</button>
+  <div id="overlay" class="overlay">
+    <button id="edit-button" class="button button--edit">
+      edit
+    </button>
+    <form class="form" id="form-placeholder-dimensions">
+      <div class="input-container">
+        <label
+          class="label" 
+          for="width">
+          width
+        </label>
+        <input
+          class="input"
+          placeholder="width (pixels)" 
+          value="200" 
+          type="number" 
+          id="width" 
+          name="width" />
+      </div>
+      <div class="input-container">
+        <label
+          class="label"  
+          for="height">
+          height
+        </label>
+        <input
+          class="input"
+          placeholder="height (pixels)" 
+          value="200" 
+          type="number" 
+          id="height" 
+          name="height" />
+      </div>
+      <div class="input-container">
+        <label
+          class="label"
+          for="color-picker">
+          color picker
+        </label>
+        <input
+          type="color" 
+          id="color-picker" 
+          name="color-picker" 
+          value="#2f2f2f" />
+      </div>
+    </form>
+  </div>
+  <button
+      class="button button--download" 
+      id="download-canvas-button">
+      download
+  </button>
+    <div class="canvas-container">
+      <canvas id="canvas"></canvas>
+    </div>
   <script src="create-placeholder-image.js"></script>
 </body>
 </html>
