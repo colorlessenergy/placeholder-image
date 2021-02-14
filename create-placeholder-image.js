@@ -46,3 +46,11 @@
     context.fillRect(0, 0, width, height);
   }
 })();
+
+(function showAndHideOverlay() {
+  const editButton = document.querySelector('#edit-button');
+  const overlay = document.querySelector('#form-placeholder-dimensions');
+  editButton.addEventListener('click', function () {
+    overlay.classList.toggle('hide');
+  });
+}());
