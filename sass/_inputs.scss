@@ -1,0 +1,20 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.label {
+  margin-bottom: 10px;
+}
+
+.input {
+  border: 1px solid #929292;
+  margin-bottom: 10px;
+  padding: 12px 8px;
+  width: 100%;
+
+  background-color: #dedbdb;
+  border-radius: 5px;
+}
